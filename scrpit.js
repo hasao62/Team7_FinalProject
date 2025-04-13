@@ -1,5 +1,5 @@
 const clientId = 'YOUR_CLIENT_ID_HERE'; 
-const redirectUri = 'https://yourwebsite.com/callback.php'; 
+const redirectUri = 'https://thewebsite.com/callback.php'; 
 const scopes = ['identify', 'email'];
 
 const loginButton = document.getElementById('login-btn');

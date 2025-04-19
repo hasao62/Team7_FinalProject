@@ -16,4 +16,10 @@ try {
 } catch (\PDOException $e) {
     die('Database connection failed: ' . $e->getMessage());
 }
-?>
+
+public function getUserTranscriptions($userId) {
+    $stmt = $this->pdo->prepare("SELECT content, created_at FROM transcriptions WHERE user_id = :user_id ORDER BY created_at DESC");
+    $stmt->execute([':user_id' => $userId]);
+    return $stmt->fetchAll();
+}
+

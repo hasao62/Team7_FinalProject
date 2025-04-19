@@ -2,7 +2,6 @@ const clientId = 'YOUR_CLIENT_ID_HERE';
 const redirectUri = 'https://yourwebsite.com/callback.php'; 
 const scopes = ['identify', 'email', 'guilds', 'bot'];
 
-
 const loginButton = document.getElementById('login-btn');
 
 loginButton.addEventListener('click', () => {

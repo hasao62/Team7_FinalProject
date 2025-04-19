@@ -34,7 +34,7 @@ UserID int not null,
 AudioID int not null,
 CommandID int not null,
 Transcript text,
-Time_Log datetime,
+Time_Log TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 primary key (TranscriptID),
 foreign key (UserID) references Users(UserID),
 foreign key (CommandID) references Commands(CommandID)

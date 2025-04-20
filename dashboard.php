@@ -6,7 +6,7 @@ if (!isset($_SESSION['user'])) {
     header('Location: index.html');
     exit;
 }
-
+//references db.php 
 require 'DB.php';
 $db = new DB();
 

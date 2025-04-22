@@ -1,4 +1,3 @@
-//tts.js
 const fs = require('fs');
 const path = require('path');
 const { TextToSpeechClient } = require('@google-cloud/text-to-speech');
@@ -41,37 +40,68 @@ module.exports.TTS = async (message) => {
         return message.reply('Issue with the TTS file generation.');
       }
 
-      // Proceed with playing the audio if the file exists
+      // play the audio if the file exists
       const connection = joinVoiceChannel({
         channelId: voiceChannel.id,
         guildId: voiceChannel.guild.id,
         adapterCreator: voiceChannel.guild.voiceAdapterCreator,
       });
 
-      entersState(connection, VoiceConnectionStatus.Ready, 20_000).then(() => {
-        const player = createAudioPlayer();
-        const resource = createAudioResource(audioPath, {
-          inputType: StreamType.Arbitrary,
-        });
+      entersState(connection, VoiceConnectionStatus.Ready, 30_000) 
+        .then(() => {
+          const player = createAudioPlayer();
+          console.log("Creating audio resource");
 
-        player.play(resource);
-        connection.subscribe(player);
+          const resource = createAudioResource(audioPath, {
+            inputType: StreamType.Arbitrary,
+          });
+  // debug
+          if (!resource) {
+            console.error('Audio resource creation failed.');
+            return message.reply('Failed creating audio resource.');
+          }
 
-        player.on(AudioPlayerStatus.Idle, () => {
-          connection.destroy();
-          fs.unlinkSync(audioPath);  // Delete the file after playing
-        });
+          console.log("Audio resource created");
 
-        player.on('error', (err) => {
-          console.error('Audio player error:', err);
-          connection.destroy();
+          player.play(resource);
+          connection.subscribe(player);
+
+          // Listen for errors in the player
+          player.on('error', (err) => {
+            console.error('Audio player error', err);
+            connection.destroy();
+          });
+
+          player.on(AudioPlayerStatus.Idle, () => {
+            console.log('Audio finished');
+            connection.destroy();
+            fs.unlinkSync(audioPath);  // delete file after playing
+          });
+
+          player.on(AudioPlayerStatus.Playing, () => {
+            console.log('Audio playing');
+          });
+
+          player.on(AudioPlayerStatus.Paused, () => {
+            console.log('Audio paused.');
+          });
+          
+          // debug
+          setTimeout(() => {
+            if (player.state.status !== AudioPlayerStatus.Playing) {
+              console.error('Audio not playing after delay');
+            }
+          }, 5000);
+        })
+        
+        // debug
+        .catch((err) => {
+          console.error('Error connecting to voice channel:', err);
+          message.reply('Failed to join voice channel.');
         });
-      }).catch((err) => {
-        console.error('Error connecting to the voice channel:', err);
-        message.reply('Failed to join the voice channel.');
-      });
     });
-
+    
+   // debug
   } catch (err) {
     console.error('Error generating TTS:', err);
     message.reply('Error generating the TTS audio.');

@@ -1,0 +1,19 @@
+{
+  "name": "finalproj",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@discordjs/voice": "^0.18.0",
+    "@google-cloud/text-to-speech": "^6.0.1",
+    "discord.js": "^14.18.0",
+    "dotenv": "^16.5.0",
+    "finalproj": "file:"
+  }
+}

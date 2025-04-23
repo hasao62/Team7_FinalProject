@@ -5,104 +5,61 @@
 }
 
 body {
-  background-color: #5865F2;
-  color: #fff;
-  font-family: Arial, sans-serif;
-  height: 100vh;
+  background: linear-gradient(to right, #23272A, #2C2F33);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 20px;
+  color: white;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  background: url('02671927-a81d-45b6-a30b-a021ef375f17.png') no-repeat center center fixed;
+  background-size: cover;
+  opacity: 0.1;
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: -1;
 }
 
 .container {
   background: #2C2F33;
-  padding: 50px;
-  border-radius: 10px;
+  padding: 40px 30px;
+  border-radius: 20px;
   text-align: center;
-  width: 300px;
-  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.6);
 }
 
 h1 {
   margin-bottom: 10px;
+  font-size: 2rem;
 }
 
 p {
-  margin-bottom: 20px;
+  margin-bottom: 25px;
+  font-size: 1.1rem;
+  color: #ccc;
 }
 
 button {
-  padding: 10px 20px;
+  padding: 14px 28px;
   background-color: #7289DA;
   border: none;
-  border-radius: 5px;
-  font-size: 16px;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: bold;
   color: #fff;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 button:hover {
   background-color: #5b6eae;
-}
-
-.button-group {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  margin-top: 20px;
-}
-
-.button {
-  background-color: #7289DA;
-  padding: 10px;
-  text-decoration: none;
-  color: white;
-  font-size: 18px;
-  border-radius: 8px;
-  transition: background-color 0.3s ease;
-  text-align: center;
-}
-
-.button:hover {
-  background-color: #5b6eae;
-}
-
-.top-bar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 30px;
-  background-color: #2C2F33;
-  width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-.user-info {
-  color: #fff;
-  font-size: 18px;
-}
-
-.settings i {
-  color: #fff;
-  width: 24px;
-  height: 24px;
-  cursor: pointer;
-}
-
-.server-list {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-top: 20px;
-}
-
-.server-item {
-  background-color: #7289DA;
-  padding: 10px;
-  border-radius: 8px;
-  text-align: center;
-  color: white;
-  font-size: 16px;
 }

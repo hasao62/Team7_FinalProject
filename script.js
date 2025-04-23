@@ -1,6 +1,6 @@
-const clientId = 'YOUR_CLIENT_ID_HERE'; 
-const redirectUri = 'https://thewebsite.com/callback.php'; 
-const scopes = ['identify', 'email'];
+const clientId = 'YOUR_CLIENT_ID'; // Replace this
+const redirectUri = 'http://localhost:3000/Discord_Callback.php'; // Or your hosted callback
+const scopes = ['identify'];
 
 const loginButton = document.getElementById('login-btn');
 

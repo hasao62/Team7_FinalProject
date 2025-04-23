@@ -1,0 +1,80 @@
+body {
+  background-color: #23272A;
+  color: #fff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 40px;
+  margin: 0;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #2C2F33;
+  padding: 20px 30px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.settings a {
+  color: #7289DA;
+  font-size: 24px;
+  text-decoration: none;
+}
+
+.container {
+  background-color: #2C2F33;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+
+p {
+  margin-bottom: 20px;
+  color: #ccc;
+}
+
+.server-list {
+  margin-bottom: 20px;
+}
+
+.server-item {
+  padding: 8px 0;
+  border-bottom: 1px solid #40444B;
+}
+
+.button-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.button-group a {
+  padding: 10px 16px;
+  background-color: #7289DA;
+  border-radius: 6px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.button-group a:hover {
+  background-color: #5b6eae;
+}
+

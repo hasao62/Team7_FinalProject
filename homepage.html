@@ -1,42 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Home</title>
-  <link rel="stylesheet" href="PrettyStuff.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bot Dashboard</title>
+  <link rel="stylesheet" href="homepage.css" />
   <script src="https://unpkg.com/feather-icons"></script>
 </head>
 <body>
 
+  <!-- Top Navigation Bar -->
   <div class="top-bar">
-    <div class="user-info">Welcome, User#1234</div>
+    <div class="user-info"> Welcome, User#1234</div>
     <div class="settings">
-      <a href="settings.html"><i data-feather="settings"></i></a>
+      <a href="settings.html" title="Settings">
+        <i data-feather="settings"></i>
+      </a>
     </div>
   </div>
 
+  <!-- Main Dashboard -->
   <div class="container">
-    <h1>Bot Dashboard</h1>
-    <p>Your bot is active in:</p>
+    <h1>Team 7 Discord Bot</h1>
+    <p>Your bot is active in the following servers:</p>
 
     <div class="server-list">
-      <div class="server-item">Server 1</div>
-      <div class="server-item">Server 2</div>
-      <div class="server-item">Server 3</div>
+      <div class="server-item"> Server 1</div>
+      <div class="server-item"> Server 2</div>
+      <div class="server-item"> Server 3</div>
     </div>
 
     <div class="button-group">
-      <a href="https://discord.com/api/oauth2/authorize?client_id=YOUR_CLIENT_ID&permissions=8&scope=bot" class="button">Add Bot to Server</a>
-      <a href="transcriptions.html" class="button">View Transcriptions</a>
-      <a href="logout.html" class="button">Log Out</a>
+      <a href="https://discord.com/api/oauth2/authorize?client_id=1358014957224067223&permissions=8&scope=bot" class="button"> Add Bot to Server</a>
+      <a href="transcriptions.html" class="button"> View Transcriptions</a>
+      <a href="logout.html" class="button"> Log Out</a>
     </div>
-
   </div>
 
+  <!-- Feather icons script -->
   <script>
     feather.replace();
   </script>
 
 </body>
-</html>

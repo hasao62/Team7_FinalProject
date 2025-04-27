@@ -1,4 +1,4 @@
-const clientId = 'YOUR_CLIENT_ID'; // Replace this
+const clientId = '1358014957224067223'; // Replace this
 const redirectUri = 'http://localhost:3000/Discord_Callback.php'; // Or your hosted callback
 const scopes = ['identify'];
 

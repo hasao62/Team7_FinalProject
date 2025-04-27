@@ -1,8 +1,8 @@
 <?php
 require 'db.php'; // connect to DB
 
-$client_id = 'YOUR_CLIENT_ID_HERE';
-$client_secret = 'YOUR_CLIENT_SECRET_HERE';
+$client_id = '1358014957224067223';
+$client_secret = '7HJsoyIJvJHpj89INzteVqRW1PXXqJEK';
 $redirect_uri = 'https://yourwebsite.com/callback.php';
 
 if (!isset($_GET['code'])) {
